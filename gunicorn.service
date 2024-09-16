@@ -1,0 +1,10 @@
+Description=gunicorn daemon for Multi_solution
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/root/Multi_solution
+ExecStart=/root/Multi_solution/env/bin/gunicorn --workers=3 --bind unix:/root/Multi_solution/base.sock base.w>
+[Install]
+WantedBy=multi-user.target
